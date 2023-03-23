@@ -1,0 +1,5 @@
+---
+title: "Getting Started"
+---
+
+On this website I show some resources I found pretty useful while I am using R.

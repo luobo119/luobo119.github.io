@@ -1,0 +1,32 @@
+---
+title: "Plot"
+---
+
+[The R Graph Gallery](https://r-graph-gallery.com/){.uri} shows examples to generate multiple types of graphs using 'ggplot2'.
+
+Here is an example from 'The R Graph Gallery' to create a boxplot:
+
+```{r}
+# library
+library(ggplot2)
+# create a data frame
+variety=rep(LETTERS[1:7], each=40)
+treatment=rep(c("high","low"),each=20)
+note=seq(1:280)+sample(1:150, 280, replace=T)
+data=data.frame(variety, treatment ,  note)
+# One box per treatment
+
+ggplot(data, aes(x=variety, y=note, fill=treatment)) + 
+    geom_boxplot() +
+    facet_wrap(~treatment)
+
+```
+
+One function I found pretty useful in 'ggplot2' is 'lab'. This function could be used to change the title, subtitle, legend title, etc. For example, we can change the legend title:
+
+```{r}
+ggplot(data, aes(x=variety, y=note, fill=treatment)) + 
+    geom_boxplot() +
+    facet_wrap(~treatment) + 
+    labs(fill = 'Treatment Level')
+```

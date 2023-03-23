@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "R"
+  sidebar:
+    style: "floating"
+    search: false
+    contents:
+      - index.qmd
+      - section: "Useful Websites"
+        contents:
+          - plot.qmd
+      - section: "Useful Packages"
+        contents:
+          - data_table.qmd
+      - about.qmd
+          
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "On this website I show some resources I found pretty useful while I am using R."
+  },
+  {
+    "objectID": "data_table.html",
+    "href": "data_table.html",
+    "title": "data.table",
+    "section": "",
+    "text": "‘data.table’ is a useful package to work with tabular data in R. It provides a high-performance version of base R’s data.frame with syntax and feature enhancements for ease of use, convenience and programming speed."
+  },
+  {
+    "objectID": "data_table.html#updating",
+    "href": "data_table.html#updating",
+    "title": "data.table",
+    "section": "Updating",
+    "text": "Updating\n\nDT[,Sepal.Length2:=Sepal.Length^2] \nhead(DT)\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species Sepal.Length2\n1:          5.1         3.5          1.4         0.2  setosa         26.01\n2:          4.9         3.0          1.4         0.2  setosa         24.01\n3:          4.7         3.2          1.3         0.2  setosa         22.09\n4:          4.6         3.1          1.5         0.2  setosa         21.16\n5:          5.0         3.6          1.4         0.2  setosa         25.00\n6:          5.4         3.9          1.7         0.4  setosa         29.16"
+  },
+  {
+    "objectID": "data_table.html#grouping",
+    "href": "data_table.html#grouping",
+    "title": "data.table",
+    "section": "Grouping",
+    "text": "Grouping\n\nDT[, mean(Petal.Length), by = Species]\n\n      Species    V1\n1:     setosa 1.462\n2: versicolor 4.260\n3:  virginica 5.552\n\n\nMore usage in Cheat Sheet."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Updated on Mar-23-2023."
+  },
+  {
+    "objectID": "plot.html",
+    "href": "plot.html",
+    "title": "Plot",
+    "section": "",
+    "text": "The R Graph Gallery shows examples to generate multiple types of graphs using ‘ggplot2’.\nHere is an example from ‘The R Graph Gallery’ to create a boxplot:\n\n# library\nlibrary(ggplot2)\n# create a data frame\nvariety=rep(LETTERS[1:7], each=40)\ntreatment=rep(c(\"high\",\"low\"),each=20)\nnote=seq(1:280)+sample(1:150, 280, replace=T)\ndata=data.frame(variety, treatment ,  note)\n# One box per treatment\n\nggplot(data, aes(x=variety, y=note, fill=treatment)) + \n    geom_boxplot() +\n    facet_wrap(~treatment)\n\n\n\n\nOne function I found pretty useful in ‘ggplot2’ is ‘lab’. This function could be used to change the title, subtitle, legend title, etc. For example, we can change the legend title:\n\nggplot(data, aes(x=variety, y=note, fill=treatment)) + \n    geom_boxplot() +\n    facet_wrap(~treatment) + \n    labs(fill = 'Treatment Level')"
+  }
+]

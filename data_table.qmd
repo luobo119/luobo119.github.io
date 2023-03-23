@@ -1,0 +1,28 @@
+---
+title: "data.table"
+---
+
+'data.table' is a useful package to work with tabular data in R. It provides a high-performance version of base R's `data.frame` with syntax and feature enhancements for ease of use, convenience and programming speed.
+
+# Usage
+
+```{r}
+library(data.table)
+DT = as.data.table(iris)
+head(DT)
+```
+
+## Updating
+
+```{r}
+DT[,Sepal.Length2:=Sepal.Length^2] 
+head(DT)
+```
+
+## Grouping
+
+```{r}
+DT[, mean(Petal.Length), by = Species]
+```
+
+More usage in [Cheat Sheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/datatable_Cheat_Sheet_R.pdf).
